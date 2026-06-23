@@ -1,5 +1,5 @@
 import random
-
+from Hangmanstages import stages
 word_list=["grapes","guava","mango","papaya","strawberry"]
 lives=6
 choosen=random.choice(word_list)
@@ -17,7 +17,8 @@ while not game_over:
             display[pos]=Guess
     print(display)        
     if Guess not in choosen:
-        lives-=1        
+        lives-=1 
+        print(stages[lives])
         if lives==0:
             game_over=True
             print("You lose!!")
